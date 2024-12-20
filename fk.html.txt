@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Категорії Автозапчастин</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0; }
+        .sidebar {
+            width: 250px;
+            background-color: #000;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .subcategory {
+            display: none;
+            background-color: #ccc;
+        }
+        .subcategory a {
+            color: black;
+            padding-left: 20px;
+        }
+        .header {
+            background-color: #3f000d;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .main-content {
+            margin-top: 60px; /* висота заголовка */
+            margin-left: 260px; /* ширина сайдбара */
+            padding: 20px;
+        .main-content a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content-block {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .banner-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .banner {
+            width: 30%;
+            background-color: #ccc;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        .input-field {
+            margin-top: 20px;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 2px solid #001f3f;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function toggleSubcategory(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+  <div class="header">
+        <a href="#категорія1">Сезонні товари</a>
+        <a href="#категорія2">Акції</a>
+        <a href="#категорія3">Топ товари</a>
+        <a href="#категорія4">Набір для ТО</a>
+        <a href="#категорія5">Набори за доглядом</a>
+        <a href="#категорія6">Запчастини для машин</a>
+    </div>
+</body>
+<body>
+    <div class="sidebar">
+        <h2>Категорії</h2>
+        <a href="javascript:void(0)" onclick="toggleSubcategory('автошини')">Автошини</a>
+        <div class="subcategory" id="автошини">
+            <a href="#бренд">БРЕНД</a>
+            <a href="#діаметр">ДІАМЕТР</a>
+        </div>
+        <a href="javascript:void(0)" onclick="toggleSubcategory('автохімія')">Автохімія</a>
+        <div class="subcategory" id="автохімія">
+            <a href="#мастильні-матеріали">Мастильні матеріали</a>
+            <a href="#очистка-та-захист">Очистка та захист</a>
+            <a href="#захисні-покриття">Захисні покриття</a>
+            <a href="#технічні-рідини">Технічні рідини</a>
+            <a href="#спеціальні-продукти">Спеціальні продукти</a>
+            <a href="#ремонтні-матеріали">Ремонтні матеріали</a>
+        </div>
+    <a href="javascript:void(0)" onclick="toggleSubcategory('сервіс')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Сервіс та Обслуговування машини</a>
+    <div class="subcategory" id="сервіс" style="display: none;">
+        <h3 onclick="toggleSubcategory('фільтри')" style="font-family: 'Roboto', sans-serif; color: #000000; cursor: pointer;">Фільтри</h3>
+        <div class="sub-subcategory" id="фільтри" style="display: none;">
+            <a href="#фільтри-салону" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри салону</a>
+            <a href="#фільтри-паливні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри паливні</a>
+            <a href="#фільтри-масляні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри масляні</a>
+            <a href="#фільтри-повітряні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри повітряні</a>
+            <a href="#фільтри-кпп" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри КПП та ГУРу</a>
+            <a href="#фільтри-охолоджувальної-рідини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри охолоджувальної рідини</a>
+            <a href="#фільтри-adblue" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фільтри AD BLUE</a>
+        </div>
+        <h3 onclick="toggleSubcategory('мастильні-матеріали')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Мастильні матеріали</h3>
+        <div class="sub-subcategory" id="мастильні-матеріали" style="display: none;">
+            <a href="#змащення" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Змащення</a>
+            <a href="#олії" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Олії</a>
+            <a href="#масла-двигунів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Масла двигунів</a>
+            <a href="#гідравлічні-рідини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Гідравлічні рідини, АТФ</a>
+            <a href="#олії-кпп" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Олії КПП</a>
+            <a href="#олії-редукторів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Олії редукторів</a>
+        </div>
+        <h3 onclick="toggleSubcategory('технічні-рідини')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Технічні рідини</h3>
+        <div class="sub-subcategory" id="технічні-рідини" style="display: none;">
+            <a href="#рідина-adblue" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Рідина ADBLUE</a>
+            <a href="#гальмівні-рідини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Гальмівні рідини</a>
+            <a href="#вода-дистильована" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Вода дистильована</a>
+            <a href="#антифризи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Антифризи</a>
+        </div>
+        <h3 onclick="toggleSubcategory('спеціальні-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Спеціальні компоненти</h3>
+        <div class="sub-subcategory" id="спеціальні-компоненти" style="display: none;">
+            <a href="#вологовідділювачі" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Вологовідділювачі</a>
+        </div>
+    </div>
+    <a href="javascript:void(0)" onclick="toggleSubcategory('деталі-двигуна')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Деталі двигуна</a>
+    <div class="subcategory" id="деталі-двигуна" style="display: none;">
+        <h3 onclick="toggleSubcategory('основні-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Основні компоненти</h3>
+        <div class="sub-subcategory" id="основні-компоненти" style="display: none;">
+            <a href="#впускний-колектор" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Впускний колектор</a>
+            <a href="#грм" style="font-family: 'Roboto', sans-serif; color: #001f3f;">ГРМ</a>
+            <a href="#ремені-ролики" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ремені та ролики</a>
+            <a href="#колінвал" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Колінвал</a>
+            <a href="#маховики-вінці" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Маховики та вінці</a>
+            <a href="#корінні-підшипники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Корінні підшипники</a>
+            <a href="#шатунні-підшипники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шатунні підшипники</a>
+        </div>
+        <h3 onclick="toggleSubcategory('прокладки-ущільнення')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Прокладки та ущільнення</h3>
+        <div class="sub-subcategory" id="прокладки-ущільнення" style="display: none;">
+            <a href="#прокладки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Прокладки</a>
+            <a href="#прокладки-охолодження" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Прокладки системи охолодження</a>
+            <a href="#прокладки-турбін" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Прокладки турбін</a>
+        </div>
+        <h3 onclick="toggleSubcategory('система-змащення')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Система змащення</h3>
+        <div class="sub-subcategory" id="система-змащення" style="display: none;">
+            <a href="#компоненти-змащення" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компоненти системи змащення</a>
+        </div>
+        <h3 onclick="toggleSubcategory('паливна-система')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Паливна система</h3>
+        <div class="sub-subcategory" id="паливна-система" style="display: none;">
+            <a href="#компоненти-паливної-системи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компоненти паливної системи</a>
+            <a href="#рмк-паливної-системи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК паливної системи</a>
+            <a href="#паливні-насоси" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Паливні насоси низького тиску</a>
+            <a href="#форсунки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Форсунки</a>
+        </div>
+        <h3 onclick="toggleSubcategory('турбіни-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Турбіни та компоненти</h3>
+        <div class="sub-subcategory" id="турбіни-компоненти" style="display: none;">
+            <a href="#турбіни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Турбіни</a>
+        </div>
+        <h3 onclick="toggleSubcategory('електроустаткування-двигуна')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Електроустаткування двигуна</h3>
+        <div class="sub-subcategory" id="електроустаткування-двигуна" style="display: none;">
+            <a href="#компоненти-електроустаткування" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компоненти електроустаткування</a>
+            <a href="#датчики-двигуна" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Датчики двигуна</a>
+        </div>
+        <h3 onclick="toggleSubcategory('деталі-стартерів-генераторів')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Деталі стартерів та генераторів</h3>
+        <div class="sub-subcategory" id="деталі-стартерів-генераторів" style="display: none;">
+            <a href="#стартери" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Стартери</a>
+        </div>
+        <h3 onclick="toggleSubcategory('система-охолодження')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Система охолодження</h3>
+        <div class="sub-subcategory" id="система-охолодження" style="display: none;">
+            <a href="#водяні-насоси" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Водяні насоси</a>
+            <a href="#датчики-рівня-рідини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Датчики рівня охолоджувальної рідини</a>
+            <a href="#термостати" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Термостати</a>
+            <a href="#бачки-розширювальні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Бачки розширювальні</a>
+            <a href="#патрубки-охолодження" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Патрубки системи охолодження</a>
+            <a href="#радіатори" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Радіатори</a>
+            <a href="#віскомуфти" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Віскомуфти</a>
+        </div>
+        <h3 onclick="toggleSubcategory('вихлопна-система')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Вихлопна система</h3>
+        <div class="sub-subcategory" id="вихлопна-система" style="display: none;">
+            <a href="#компоненти-вихлопної-системи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компоненти вихлопної системи</a>
+            <a href="#гофри-вихлопної-системи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Гофри вихлопної системи</a>
+            <a href="#фланці-глушника" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фланці глушника</a>
+        </div>
+       <h3 onclick="toggleSubcategory('підвіска-двигуна')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Підвіска двигуна</h3>
+        <div class="sub-subcategory" id="підвіска-двигуна" style="display: none;">
+            <a href="компоненти-підвіски-двигуна" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компоненти підвіски двигуна</a>
+        </div>
+         <h3 onclick="toggleSubcategory('інші-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Інші компоненти</h3>
+<div class="sub-subcategory" id="інші-компоненти" style="display: none;">
+    <a href="#випускний-колектор" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Випускний колектор</a>
+    <a href="#головки-циліндрів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Головки циліндрів</a>
+    <a href="#клапана-впуск-випуск" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Клапана впуск/випуск</a>
+    <a href="#елементи-керування-двигуном" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Елементи керування двигуном</a>
+    <a href="#циліндропоршнева-група" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Циліндропоршнева група</a>
+    <a href="#кільця-двигуна" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кільця двигуна</a>
+    <a href="#циліндр-поршневий" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Циліндр поршневий</a>
+    <a href="#поршні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Поршні</a>
+</div>
+
+    </div>
+    <a href="javascript:void(0)" onclick="toggleSubcategory('трансмісія')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Трансмісія</a>
+    <div class="subcategory" id="трансмісія" style="display: none;">
+        <h3 onclick="toggleSubcategory('кпп')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">КПП (Коробка передач)</h3>
+        <div class="sub-subcategory" id="кпп" style="display: none;">
+            <a href="#деталі-кпп" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Деталі КПП</a>
+            <a href="#подушки-кпп" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Подушки КПП</a>
+        </div>
+        <h3 onclick="toggleSubcategory('зчеплення')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Зчеплення</h3>
+        <div class="sub-subcategory" id="зчеплення" style="display: none;">
+            <a href="#привід-зчеплення" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Привід зчеплення</a>
+            <a href="#циліндри-зчеплення" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Циліндри зчеплення</a>
+            <a href="#рмк-пгу" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК ПГУ та циліндрів зчеплення</a>
+            <a href="#пду" style="font-family: 'Roboto', sans-serif; color: #001f3f;">ПДУ</a>
+            <a href="#диски-зчеплення" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Зчеплення (диски, комплекти, кошики, вижимні підшипники)</a>
+        </div>
+        <h3 onclick="toggleSubcategory('карданні-вали')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Карданні вали та передача</h3>
+        <div class="sub-subcategory" id="карданні-вали" style="display: none;">
+            <a href="#наконечник-тяги" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Наконечник тяги передач</a>
+            <a href="#карданні-вали" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Карданні вали</a>
+            <a href="#хрестовини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Хрестовини</a>
+            <a href="#підвісні-підшипники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Підвісні підшипники</a>
+        </div>
+        <h3 onclick="toggleSubcategory('редуктори')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Редуктори</h3>
+        <div class="sub-subcategory" id="редуктори" style="display: none;">
+            <a href="#деталі-редуктора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Деталі редуктора</a>
+        </div>
+        <h3 onclick="toggleSubcategory('гідравлічна-система')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Гідравлічна система</h3>
+        <div class="sub-subcategory" id="гідравлічна-система" style="display: none;">
+            <a href="#компоненти-гідравлічної-системи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компоненти гідравлічної системи</a>
+        </div>
+    </div>
+    <a href="javascript:void(0)" onclick="toggleSubcategory('ходова-частина')" style="font-family: 'Roboto', sans-serif; color #FFFFFF; font-weight: bold;">Ходова частина</a>
+<div class="subcategory" id="ходова-частина" style="display: none;">
+    <h3 onclick="toggleSubcategory('стабілізатори')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Стабілізатори</h3>
+    <div class="sub-subcategory" id="стабілізатори" style="display: none;">
+        <a href="#стабілізатори" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Стабілізатори</a>
+        <a href="#стійки-стабілізатора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Стійки стабілізатора</a>
+    </div>
+    <h3 onclick="toggleSubcategory('підвіска')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Підвіска</h3>
+    <div class="sub-subcategory" id="підвіска" style="display: none;">
+        <a href="#шкворня" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шкворня</a>
+        <a href="#ступиці" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ступиці</a>
+        <a href="#кришки-маточини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кришки маточини</a>
+        <a href="#рмк-маточок" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК маточок</a>
+        <a href="#сальники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Сальники</a>
+        <a href="#шпильки-колісні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шпильки та гайки колісні</a>
+        <a href="#гайка-маточини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Гайка маточини</a>
+        <a href="#підшипники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Підшипники</a>
+    </div>
+    <h3 onclick="toggleSubcategory('амортизатори')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Амортизатори</h3>
+    <div class="sub-subcategory" id="амортизатори" style="display: none;">
+        <a href="#втулки-амортизатора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Втулки амортизатора</a>
+        <a href="#ресори" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ресори</a>
+        <a href="#рмк-ресор" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ремкомплекти ресор</a>
+        <a href="#відбійники-ресор" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Відбійники ресор, прокладки</a>
+        <a href="#втулки-ресор" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Втулки ресор</a>
+        <a href="#драбини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Драбини</a>
+        <a href="#кільця" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кільця</a>
+    </div>
+    <h3 onclick="toggleSubcategory('рульове-управління')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Рульове управління</h3>
+    <div class="sub-subcategory" id="рульове-управління" style="display: none;">
+        <a href="#рульові-тяги-наконечники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Рульові тяги, наконечники</a>
+        <a href="#різьбові-вставки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Різьбові вставки</a>
+        <a href="#наконечники-рульових-тяг" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Наконечники рульових тяг</a>
+        <a href="#тяги-поперечні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Тяги поперечні</a>
+        <a href="#тяги-поздовжні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Тяги поздовжні</a>
+    </div>
+    <h3 onclick="toggleSubcategory('пневмопідвіска')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Пневмопідвіска</h3>
+    <div class="sub-subcategory" id="пневмопідвіска" style="display: none;">
+        <a href="#пневмоподушки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Пневмоподушки</a>
+        <a href="#тяги-реактивні-променеві" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Тяги реактивні та променеві</a>
+        <a href="#рмк-променевих-тяг" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК променевих тяг</a>
+        <a href="#пальці" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Пальці</a>
+        <a href="#балки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Балки</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('рульове-керування')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Рульове керування</a>
+<div class="subcategory" id="рульове-керування" style="display: none;">
+    <h3 onclick="toggleSubcategory('рульові-колонки')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Рульові колонки</h3>
+    <div class="sub-subcategory" id="рульові-колонки" style="display: none;">
+        <a href="#рульові-колонки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Рульові колонки</a>
+    </div>
+    <h3 onclick="toggleSubcategory('насоси-гідропідсилювача')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Насоси гідропідсилювача</h3>
+    <div class="sub-subcategory" id="насоси-гідропідсилювача" style="display: none;">
+        <a href="#насоси-гідропідсилювача" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Насоси гідропідсилювача</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('гальмівна-система')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Гальмівна система</a>
+<div class="subcategory" id="гальмівна-система" style="display: none;">
+    <h3 onclick="toggleSubcategory('основні-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Основні компоненти</h3>
+    <div class="sub-subcategory" id="основні-компоненти" style="display: none;">
+        <a href="#енергоакумулятори" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Енергоакумулятори та камери</a>
+    </div>
+    <h3 onclick="toggleSubcategory('дискові-гальма')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Дискові гальма</h3>
+    <div class="sub-subcategory" id="дискові-гальма" style="display: none;">
+        <a href="#диски-гальмівні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Диски гальмівні</a>
+        <a href="#колодки-гальмівні-дискові" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Колодки гальмівні дискові</a>
+        <a href="#супорта" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Супорта</a>
+        <a href="#рмк-гальмівних-дисків" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК гальмівних дисків</a>
+        <a href="#рмк-супортів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК супортів</a>
+    </div>
+    <h3 onclick="toggleSubcategory('барабанні-гальма')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Барабанні гальма</h3>
+    <div class="sub-subcategory" id="барабанні-гальма" style="display: none;">
+        <a href="#барабани" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Барабани</a>
+        <a href="#колодки-гальмівні-барабанні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Колодки гальмівні барабанні</a>
+        <a href="#вал-розтискний" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Вал розтискний</a>
+        <a href="#трікачки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Тріскачки</a>
+        <a href="#накладки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Накладки</a>
+        <a href="#рмк-гальмівних-колодок" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК гальмівних колодок</a>
+        <a href="#захист-барабанів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Захист барабанів</a>
+        <a href="#пружини" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Пружини</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('пневмообладнання')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Пневмообладнання</a>
+<div class="subcategory" id="пневмообладнання" style="display: none;">
+    <h3 onclick="toggleSubcategory('крани-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Крани та компоненти</h3>
+    <div class="sub-subcategory" id="крани-компоненти" style="display: none;">
+        <a href="#крани" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Крани</a>
+        <a href="#ремкомплекти-кранів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ремкомплекти кранів</a>
+        <a href="#рмк-кранів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК кранів</a>
+    </div>
+    <h3 onclick="toggleSubcategory('шланги-штуцера')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Шланги та штуцера</h3>
+    <div class="sub-subcategory" id="шланги-штуцера" style="display: none;">
+        <a href="#шланги-штуцера" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шланги та штуцера</a>
+    </div>
+    <h3 onclick="toggleSubcategory('пневматичні-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Пневматичні компоненти</h3>
+    <div class="sub-subcategory" id="пневматичні-компоненти" style="display: none;">
+        <a href="#груші-пневматичні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Груші пневматичні</a>
+    </div>
+    <h3 onclick="toggleSubcategory('компресори-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Компресори та компоненти</h3>
+    <div class="sub-subcategory" id="компресори-компоненти" style="display: none;">
+        <a href="#компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Компресора</a>
+        <a href="#колінвали-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Колінвали компресора</a>
+        <a href="#трубки-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Трубки компресора</a>
+        <a href="#втулки-вкладки-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Втулки та вкладки компресора</a>
+        <a href="#заглушки-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Заглушки компресора</a>
+        <a href="#кільця-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кільця компресора</a>
+        <a href="#циліндропоршнева-група-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Циліндропоршнева група компресора</a>
+        <a href="#рмк-компресорів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК компресорів</a>
+        <a href="#головки-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Головки компресора</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('електроустаткування')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Електроустаткування</a>
+<div class="subcategory" id="електроустаткування" style="display: none;">
+    <h3 onclick="toggleSubcategory('акумулятори')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Акумулятори</h3>
+    <div class="sub-subcategory" id="акумулятори" style="display: none;">
+        <a href="#акумулятори" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Акумулятори</a>
+    </div>
+    <h3 onclick="toggleSubcategory('датчики')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Датчики</h3>
+    <div class="sub-subcategory" id="датчики" style="display: none;">
+        <a href="#датчики" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Датчики</a>
+        <a href="#датчики-abs" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Датчики ABS</a>
+    </div>
+     <h3 onclick="toggleSubcategory('кабеліроз')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Кабелі та роз'єми</h3>
+    <div class="sub-subcategory" id="кабеліроз" style="display: none;">
+        <a href="#кабелі" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кабелі</a>
+        <a href="#розетки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Розетки</a>
+        <a href="#фішки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фішки</a>
+    </div>
+    <h3 onclick="toggleSubcategory('освітлення-сигналізація')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Освітлення та сигналізація</h3>
+    <div class="sub-subcategory" id="освітлення-сигналізація" style="display: none;">
+        <a href="#фари" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фари (основні, протитуманні, поворотів)</a>
+        <a href="#скло-фар" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Скло фар</a>
+        <a href="#оптика" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Оптика</a>
+        <a href="#ліхтарі-задні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ліхтарі задні</a>
+        <a href="#ліхтарі-габаритні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ліхтарі габаритні</a>
+        <a href="#таблиці-світловідбивні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Таблиці світловідбивні</a>
+        <a href="#автолампи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Автолампи</a>
+        <a href="#сигнали-звукові" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Сигнали звукові</a>
+    </div>
+    <h3 onclick="toggleSubcategory('електричні-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Електричні компоненти</h3>
+    <div class="sub-subcategory" id="електричні-компоненти" style="display: none;">
+        <a href="#крани-рівня-підлоги" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Крани рівня підлоги</a>
+        <a href="#реле" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Реле</a>
+        <a href="#запобіжники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Запобіжники</a>
+        <a href="#кабелі-розетки-фішки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кабелі, розетки, фішки</a>
+    </div>
+    <h3 onclick="toggleSubcategory('інші')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Інші компоненти</h3>
+    <div class="sub-subcategory" id="інші" style="display: none;">
+        <a href="#тахографи " style="font-family: 'Roboto', sans-serif; color: #001f3f;">Тахографи</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('кабіна')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Кабіна</a>
+<div class="subcategory" id="кабіна" style="display: none;">
+    <h3 onclick="toggleSubcategory('внутрішня-частина')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Внутрішня частина кабіни</h3>
+    <div class="sub-subcategory" id="внутрішня-частина" style="display: none;">
+        <a href="#амортизатори-сидінь" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Амортизатори сидінь</a>
+        <a href="#деталі-огляду-комфорту" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Деталі огляду та комфорту</a>
+        <a href="#дзеркала" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Дзеркала</a>
+        <a href="#склоочисники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Склоочисники</a>
+        <a href="#електроустаткування-салону" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Електроустаткування салону</a>
+        <a href="#підрульовий-перемикач" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Підрульовий перемикач</a>
+        <a href="#замки-запалювання" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Замки запалювання</a>
+        <a href="#склопідйомники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Склопідйомники</a>
+        <a href="#панелі-приладів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Панелі приладів</a>
+        <a href="#двигун-склоочисника" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Двигун склоочисника</a>
+    </div>
+    <h3 onclick="toggleSubcategory('зовнішні-компоненти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Зовнішні компоненти</h3>
+    <div class="sub-subcategory" id="зовнішні-компоненти" style="display: none;">
+        <a href="#бризговики-крила" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Бризговики, крила</a>
+        <a href="#кріплення-крила" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кріплення крила</a>
+        <a href="#кронштейни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кронштейни</a>
+    </div>
+    <h3 onclick="toggleSubcategory('ремонтні-комплекти')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Ремонтні комплекти та деталі</h3>
+    <div class="sub-subcategory" id="ремонтні-комплекти" style="display: none;">
+        <a href="#запчастини-кабіни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Запчастини кабіни</a>
+        <a href="#рмк-кабіни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК кабіни</a>
+        <a href="#втулки-кабіни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Втулки кабіни</a>
+        <a href="#ручки-дверні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ручки дверні, КПП, замки</a>
+        <a href="#деталі-кузова" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Деталі кузова</a>
+    </div>
+    <h3 onclick="toggleSubcategory('система-підйому')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Система підйому кабіни</h3>
+    <div class="sub-subcategory" id="система-підйому" style="display: none;">
+        <a href="#система-підйому" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Система підйому кабіни</a>
+        <a href="#рмк-циліндрів-насосів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">РМК циліндрів та насосів підйому кабін</a>
+        <a href="#шланги-підйому-кабіни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шланги підйому кабіни</a>
+        <a href="#троза-кабіни" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Троса кабіни, тяги дверей</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('причепи')" style="font-family: 'Roboto', sans-serif; color #FFFFFF; font-weight: bold;">Причепи</a>
+<div class="subcategory" id="причепи" style="display: none;">
+    <h3 onclick="toggleSubcategory('основні')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Основні компоненти</h3>
+    <div class="sub-subcategory" id="основні" style="display: none;">
+        <a href="#сідла" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Сідла</a>
+        <a href="#фаркопи" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фаркопи</a>
+        <a href="#лапи-причепа" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Лапи причепа</a>
+        <a href="#ремкомплекти " style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ремкомплекти</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('обігрівачі')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Обігрівачі</a>
+<div class="subcategory" id="обігрівачі" style="display: none;">
+    <h3 onclick="toggleSubcategory('автономні-обігрівачі')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Автономні обігрівачі</h3>
+    <div class="sub-subcategory" id="автономні-обігрівачі" style="display: none;">
+        <a href="#крани-пічки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Крани пічки</a>
+        <a href="#радіатори-обігрівачів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Радіатори обігрівачів</a>
+        <a href="#вентилятори-обігрівачів" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Вентилятори обігрівачів</a>
+        <a href="#системи-кондиціювання" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Системи кондиціювання</a>
+    </div>
+    
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('аксесуари')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Аксесуари</a>
+<div class="subcategory" id="аксесуари" style="display: none;">
+    <h3 onclick="toggleSubcategory('аксесуари-кабіни')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Аксесуари для кабіни</h3>
+    <div class="sub-subcategory" id="аксесуари-кабіни" style="display: none;">
+        <a href="#антени-магнітоли" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Антени, магнітоли, електрика</a>
+        <a href="#освіжувачі-повітря" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Освіжувачі повітря</a>
+        <a href="#чохли-руль" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Чохли на кермо</a>
+        <a href="#килимки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Килимки</a>
+        <a href="#чохли-сидіння" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Чохли на сидіння</a>
+    </div>
+    <h3 onclick="toggleSubcategory('аксесуари-причепа')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Аксесуари для причепа</h3>
+    <div class="sub-subcategory" id="аксесуари-причепа" style="display: none;">
+        <a href="#ущільнення-дверей" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ущільнення дверей причепа</a>
+        <a href="#таблиці-світловідбивні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Таблиці світловідбивні</a>
+    </div>
+    <h3 onclick="toggleSubcategory('загальні-аксесуари')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Загальні аксесуари</h3>
+    <div class="sub-subcategory" id="загальні-аксесуари" style="display: none;">
+        <a href="#черевик-противідкатний" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Черевик противідкатний</a>
+        <a href="#конуса" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Конуса</a>
+        <a href="#трос-буксирувальний" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Трос буксирувальний</a>
+        <a href="#ємності-для-води" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ємності для води</a>
+        <a href="#кришка-бака" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Кришка бака</a>
+        <a href="#ремені-стяжні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ремені стяжні, троси тенту, сітки</a>
+        <a href="#багажники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Багажники, рейлінги, розпірки</a>
+        <a href="#шланги-підкачування" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шланги підкачування</a>
+        <a href="#аптечки-вогнегасники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Аптечки, вогнегасники, ADR</a>
+        <a href="#фірмовий-одяг" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Фірмовий одяг</a>
+        <a href="#ланцюги-протиковзання" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ланцюги протиковзання</a>
+        <a href="#ковпачки-колісні" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Ковпачки на колісні гайки, ковпаки</a>
+        <a href="#сумки-ящики" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Сумки, ящики</a>
+    </div>
+</div>
+<a href="javascript:void(0)" onclick="toggleSubcategory('метизи')" style="font-family: 'Roboto', sans-serif; color: #FFFFFF; font-weight: bold;">Метизи</a>
+<div class="subcategory" id="метизи" style="display: none;">
+    <h3 onclick="toggleSubcategory('кріпильні-елементи')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Кріпильні елементи</h3>
+    <div class="sub-subcategory" id="кріпильні-елементи" style="display: none;">
+        <a href="#болти" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Болти</a>
+        <a href="#гайки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Гайки</a>
+        <a href="#шайби" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шайби</a>
+        <a href="#гровера" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Гровера</a>
+        <a href="#шпильки" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шпильки</a>
+        <a href="#шплінти" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шплінти</a>
+    </div>
+    <h3 onclick="toggleSubcategory('пневматика')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Пневматика</h3>
+    <div class="sub-subcategory" id="пневматика" style="display: none;">
+        <a href="#наконечники" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Наконечники</a>
+        <a href="#штуцера" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Штуцера</a>
+    </div>
+    <h3 onclick="toggleSubcategory('трубки-шланги')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Трубки та шланги</h3>
+    <div class="sub-subcategory" id="трубки-шланги" style="display: none;">
+        <a href="#трубки-пластмасові" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Трубки пластмасові</a>
+        <a href="#трубки-компресора" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Трубки компресора</a>
+        <a href="#з'єднувачі-пластикових-трубок" style="font-family: 'Roboto', sans-serif; color: #001f3f;">З'єднувачі пластикових трубок</a>
+        <a href="#шланги-на-причіп" style="font-family: 'Roboto', sans-serif; color: #001f3f;">Шланги на причіп</a>
+        <a href="#груші" style="font-family: 'Roboto', sans-serif; color: #001f3ф;">Груші</a>
+    </div>
+    <h3 onclick="toggleSubcategory('кріплення-ущільнення')" style="font-family: 'Roboto', sans-serif; color: #001f3f; cursor: pointer;">Кріплення та ущільнення</h3>
+    <div class="sub-subcategory" id="кріплення-ущільнення" style="display: none;">
+        <a href="#хомути" style="font-family: 'Roboto', sans-serif; color: #001f3ф;">Хомути</a>
+        <a href="#ізолента" style="font-family: 'Roboto', sans-serif; color: #001f3ф;">Ізолента</a>
+    </div>
+</div>
+            
+</body>
+<body>
+    <div class="main-content">
+            <div class="banner">Банер 1</div>
+            <div class="banner">Банер 2</div>
+            <div class="banner">Банер 3</div>
+            <div class="banner">Банер 4</div>
+            <div class="banner">Банер 5</div>
+            <div class="banner">Банер 6</div>
+        </div>
+
+        <div class="input-field">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я">
+        </div>
+
+        <div class="input-field">
+            <label for="email">Електронна пошта:</label>
+            <input type="email" id="email" name="email" placeholder="Введіть вашу електронну пошту">
+        </div>
+
+        <div class="input-field">
+            <label for="message">Повідомлення:</label>
+            <input type="text" id="message" name="message" placeholder="Введіть ваше повідомлення">
+        </div>
+    </div>
+
+</body>
+
+</html>
